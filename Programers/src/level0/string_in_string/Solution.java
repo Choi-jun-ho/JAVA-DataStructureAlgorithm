@@ -33,8 +33,7 @@ public class Solution {
             int str1Distance = skipTable.get(str1.charAt(str1Index)) == null? str2.length() : skipTable.get(str1.charAt(str1Index));
             int str2SearchDistance = str2.length() - str2Index;
             System.out.print("index: " + str1.charAt(str1Index) + ", [" + str1Index + "], str1Distance: [" + str1Distance +"]/ str2Distance: [" + str2SearchDistance + "] -> + ");
-            Math.max(str1Distance, str2SearchDistance);
-            str1Index += str1Distance;
+            str1Index += Math.max(str1Distance, str2SearchDistance);
             System.out.println(Math.max(str1Distance, str2SearchDistance) + " = " + str1Index);
 
         }
