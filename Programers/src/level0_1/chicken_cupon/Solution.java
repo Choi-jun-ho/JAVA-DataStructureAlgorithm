@@ -2,15 +2,11 @@ package level0_1.chicken_cupon;
 
 public class Solution {
 
-    public int chicken_cupon(int cupon, int chicken) {
-        if (cupon < 10)
-            return 0;
-        cupon = cupon/10 + cupon%10;
-        return chicken + chicken_cupon(cupon, cupon/10);
-    }
-
     public int solution(int chicken) {
-        return chicken_cupon(chicken, chicken/10);
+        if (chicken < 10)
+            return 0;
+
+        return chicken/10 + solution(chicken/10 + chicken%10);
     }
 
     public static void main(String[] args) {
