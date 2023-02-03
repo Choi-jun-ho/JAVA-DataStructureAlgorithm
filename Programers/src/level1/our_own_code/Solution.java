@@ -10,14 +10,12 @@ public class Solution {
         StringBuilder result = new StringBuilder();
 
         for (char c : s.toCharArray()) {
-            if (!skip.contains(String.valueOf(c))) {
-                for (int i = 0; i < index; i++) {
+            for (int i = 0; i < index; i++) {
+                c = addChar(c);
+                while (skip.contains(String.valueOf(c)))
                     c = addChar(c);
-                    while (skip.contains(String.valueOf(c)))
-                        c = addChar(c);
-                }
-                result.append(c);
             }
+            result.append(c);
         }
 
         return result.toString();
